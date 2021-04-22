@@ -1,50 +1,42 @@
 const { connect, disconnect } = require('../config/db.config');
-const Task  = require('../model/task.model');
+const Library  = require('../model/library.model');
 const logger = require('../logger/api.logger');
 
-class TaskRepository {
-
+class LibraryRepository {
     constructor() {
         connect();
     }
-
-    async getTasks() {
-        const tasks = await Task.find({});
-        console.log('tasks:::', tasks);
-        return tasks;
+    async getAll() {
+        const libs = await Library.find({});
+        console.log('libs:::', libs);
+        return libs;
     }
-    async createTask(task) {
+    async create(lib) {
         let data = {};
         try {
-            console.log("respository:"+ task.title);
-            data = await Task.create(task);
+            data = await Library.create(lib);
         } catch(err) {
             logger.error('Error::' + err);
         }
         return data;
     }
-
-
-    async updateTask(task) {
+    async update(lib) {
         let data = {};
         try {
-            data = await Task.updateOne(task);
+            data = await Library.updateOne(lib);
         } catch(err) {
             logger.error('Error::' + err);
         }
         return data;
     }
-
-    async deleteTask(taskId) {
+    async delete(libId) {
         let data = {};
         try {
-            data = await Task.deleteOne({_id : taskId});
+            data = await Library.deleteOne({_id : libId});
         } catch(err) {
             logger.error('Error::' + err);
         }
         return {status: `${data.deletedCount > 0 ? true : false}`};
     }
-
 }
-
-module.exports = new TaskRepository();
+module.exports = new LibraryRepository();

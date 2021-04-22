@@ -4,12 +4,13 @@ const logger = require('../logger/api.logger');
 class TodoController {
 
     async getTasks() {
-        logger.info('Controller: getTasks')
+       // logger.info('Controller: getTasks')
+        console.log('Controller: getTasks');
         return await taskService.getTasks();
     }
 
     async createTask(task) {
-        logger.info('Controller: createTask', task);
+        console.log("Controller: createTask:"+ task.title);
         return await taskService.createTask(task);
     }
 
