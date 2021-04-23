@@ -3,7 +3,7 @@ const logger = require('../logger/api.logger');
 const uploadFile = require("../middleware/upload");
 const Project  = require('../model/project.model');
 var ip = require("ip");
-const { default: ConfigServer } = require('../../config');
+const { default: ConfigServer } = require('../config_server');
 const host = ip.address();
 //const baseUrl =  ConfigServer.host+ "/api/files/";
 //host + 

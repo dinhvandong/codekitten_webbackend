@@ -8,7 +8,7 @@ const host = ip.address();
 
 
 const path = require('path');
-const { default: ConfigServer } = require("../../config");
+const { default: ConfigServer } = require("../config_server");
 const upload = async (req, res) => {
   try 
   {

@@ -2,7 +2,6 @@ const { connect, disconnect } = require('../config/db.config');
 const Project  = require('../model/project.model');
 const logger = require('../logger/api.logger');
 var ip = require("ip");
-const { ConfigServer } = require('../../config');
 console.dir ( ip.address() );
 const host = ip.address();
 class ProjectRepository {

@@ -41,40 +41,15 @@ class AssetRepository {
 
     async create(asset) {
         let data = {};
-        // var temp = asset;
-        // var base64 = "";
-        // const imageToBase64 = require('image-to-base64');
-        // try {
-        //  await   imageToBase64("./backdrop/bg_x.jpg") // Path to the image
-        // .then(
-        //     (response) => {
-        //         base64 = response;
-
-                
-        //        // console.log(response); // "cGF0aC90by9maWxlLmpwZw=="
-        //     }
-        // )
-        // .catch(
-        //     (error) => {
-        //         console.log(error); // Logs an error if there was one
-        //     }
-        // )
-        // } catch (error) {      
-        // }
-        // temp.assetId = md5(asset.name);
-        // temp.base64 = asset.base64;
-        // temp.md5ext = temp.assetId + "."+ temp.dataFormat;
         try {
-           // data = await Asset.create(temp);
-           let domain = (new URL(asset.base64));
-           let path = domain.pathname
-           console.log("PATH------><------PATH:", path);
-           asset.base64 = path;
+        //    let domain = (new URL(asset.base64));
+        //    let path = domain.pathname
+        //    console.log("PATH------><------PATH:", path);
+        //    asset.base64 = path;
            data = await Asset.create(asset);
         } catch(err) {
             logger.error('Error::' + err);
         }
-        
         return data;
     }
 

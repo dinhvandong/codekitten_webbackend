@@ -4,7 +4,6 @@ const { connect, disconnect } = require('../config/db.config');
 var md5 = require('md5');
 
 var ip = require("ip");
-//const { default: ConfigServer } = require('../../config');
 const host = ip.address();
 //const baseUrl =  host + ":8080/api/files/find/";
 

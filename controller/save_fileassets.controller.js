@@ -2,7 +2,7 @@ const logger = require('../logger/api.logger');
 const uploadFile = require("../middleware/upload");
 const FileAsset  = require('../model/fileasset.model');
 var ip = require("ip");
-const { ConfigServer } = require('../../config');
+const { ConfigServer } = require('../config_server');
 console.dir ( ip.address() );
 const saveFileAsset = async (req, res) => {
 const host = ip.address();
