@@ -49,6 +49,18 @@ class FileAssetRepository {
         return data;
     }
 
+
+    async findByMd5Code(md5Code)
+    {
+        let data = {};
+        try {
+            console.log("findbyMd5_4", md5Code);
+            data = await FileAsset.findOne({md5code:md5Code});
+        } catch(err) {
+            logger.error('Error::' + err);
+        }
+        return data.url;
+    }
     async deleteFileAsset(fileId) {
         let data = {};
         try {

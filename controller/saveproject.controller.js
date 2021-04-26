@@ -3,7 +3,7 @@ const logger = require('../logger/api.logger');
 const uploadFile = require("../middleware/upload");
 const Project  = require('../model/project.model');
 var ip = require("ip");
-const { default: ConfigServer } = require('../config_server');
+const { ConfigServer } = require('../config_server');
 const host = ip.address();
 //const baseUrl =  ConfigServer.host+ "/api/files/";
 //host + 
@@ -17,7 +17,7 @@ const { connect, disconnect } = require('../config/db.config');
     try 
     {
 
-      const baseUrl =  ConfigServer.host+ + "/api/files/find";
+      const baseUrl =  ConfigServer.host  + "/api/files/find";
 
       console.log("AAAAA00");
       await uploadFile(req, res);

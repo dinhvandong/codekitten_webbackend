@@ -3,6 +3,8 @@ const multer = require("multer");
 const maxSize = 2000 * 1024 * 1024;
 const path = require('path');
 const imagePath = path.join('./resources');
+var md5 = require('md5');
+
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
     console.log("aaaa");
@@ -13,7 +15,7 @@ let storage = multer.diskStorage({
     console.log("bbb");
 
     //console.log(file.originalname);
-    cb(null, Date.now()  + path.extname(file.originalname));
+    cb(null, md5(Date.now())  + path.extname(file.originalname));
     console.log("ccc");
 
    // cb(null, Date.now() + Date.now() + path.extname(file.originalname));

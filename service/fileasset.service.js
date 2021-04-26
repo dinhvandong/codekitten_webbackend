@@ -17,6 +17,12 @@ class FileAssetService
     {
         return await fileassetRepository.create(file);
     }
+
+    async findByMd5Code(md5Code)
+    {
+        console.log("findbymd5_2", md5Code);
+        return await fileassetRepository.findByMd5Code(md5Code);
+    }
     async update(file)
     {
         return await fileassetRepository.update(file);

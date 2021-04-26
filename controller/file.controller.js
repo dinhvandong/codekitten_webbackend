@@ -2,6 +2,7 @@ const uploadFile = require("../middleware/upload");
 const fs = require("fs");
 var ip = require("ip");
 console.dir ( ip.address() );
+const fileassetService  = require('../service/fileasset.service');
 
 const host = ip.address();
 //const baseUrl =  ConfigServer.host+ "/api/files/";
@@ -63,6 +64,19 @@ const find = (req, res) => {
   res.sendFile(filepath);
 }
 
+const findMd5 = async (req, res) => {
+  const md5code = req.params.md5code;
+  const data =  await fileassetService.findByMd5Code(md5code);
+  const url = data + "";
+  console.log("URL_MD5", url);
+  var fileName = url.split('/').pop();
+
+  const __dirname = path.resolve(path.dirname('')); 
+  const directoryPath = __dirname + "/resources/";
+  const filepath = directoryPath + fileName;
+  res.sendFile(filepath);
+}
+
 const download = (req, res) => {
   const fileName = req.params.name;
  // const directoryPath =  "./resources/";
@@ -91,5 +105,5 @@ module.exports = {
   upload,
   getListFiles,
   download,
-  find
+  find, findMd5
 };

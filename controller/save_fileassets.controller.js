@@ -30,6 +30,8 @@ const { connect, disconnect } = require('../config/db.config');
       const  path = req.file.path.split("/")[1];
 
       const url = baseUrl +  path;
+
+      const md5code = path.split(".")[0];
       //const url =  path;
       console.log("URL:::", url);
 
@@ -38,6 +40,7 @@ const { connect, disconnect } = require('../config/db.config');
       var fileasset  = new FileAsset();
       fileasset.name = name;
       fileasset.desc = desc;
+      fileasset.md5code = md5code;
       fileasset.createdTime = createdTime;
       fileasset.path = path;
       fileasset.url = url;
