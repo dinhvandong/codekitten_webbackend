@@ -63,7 +63,7 @@ class SpriteRepository {
 
         }
 
-        sprite.sounds = [];
+       // sprite.sounds = [];
         for(y = 0;y< sprite.sounds.length;y++)
         {
             // sprite.sounds[y].assetId = "83a9787d4cb6f3b7632b4ddfebf74367";
