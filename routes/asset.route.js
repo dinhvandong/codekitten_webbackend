@@ -104,6 +104,7 @@ router.get("/asset/find/:id", (req, res) => {
     // const directoryPath =  "./resources/";
       // const __dirname = path.resolve(path.dirname('')); 
       res.download("./resources/"+ fileName);
+     //res.sendFile("./resources/"+ fileName);
 
       // res.end(data.base64);
       //download( "./resources/"+ data.name);

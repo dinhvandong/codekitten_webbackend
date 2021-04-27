@@ -18,13 +18,15 @@ class SpriteRepository {
         {
             var s = sprites[i];
             var listCostumes = s.costumes;
+            var listSounds = s.sounds;
             var j ;
 
-            for(j=0;j< listCostumes.length;j++)
+            for(j=0;j< listSounds.length;j++)
             {
 
-               // s.costumes[j].base64 = "";
+               // s.sounds[j] = [];
             }
+            s.sounds = [];
 
             list.push(s);
         }
@@ -61,6 +63,7 @@ class SpriteRepository {
 
         }
 
+        sprite.sounds = [];
         for(y = 0;y< sprite.sounds.length;y++)
         {
             // sprite.sounds[y].assetId = "83a9787d4cb6f3b7632b4ddfebf74367";
