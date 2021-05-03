@@ -9,7 +9,7 @@ const connect = () => {
     //Import the mongoose module
 var mongoose = require('mongoose');
 //Set up default mongoose connection
-var mongoDB = 'mongodb://128.199.145.159:27017/codekitten';
+var mongoDB = 'mongodb://localhost:27017/codekitten';
 //"mongodb://doadmin:O9Y3Mn42u167y8Ka@mongo-dev-24b83bf9.mongo.ondigitalocean.com:27017/admin?authSource=admin&replicaSet=mongo-dev";
 
 //'mongodb://127.0.0.1:27017/codekitten';
