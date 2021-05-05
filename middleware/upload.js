@@ -1,6 +1,6 @@
 const util = require("util");
 const multer = require("multer");
-const maxSize = 2000 * 1024 * 1024;
+const maxSize = 1000* 2000 * 1024 * 1024;
 const path = require('path');
 const imagePath = path.join('./resources');
 var md5 = require('md5');
