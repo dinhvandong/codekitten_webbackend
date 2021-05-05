@@ -64,7 +64,7 @@ router.put('/fileasset/update', (req, res) =>
     fileAssetController.updateFileAsset(req.body.task).then(data => res.json(data));
 });
 
-router.delete('/fileasset/:id', (req, res) => 
+router.get('/fileasset/delete/:id', (req, res) => 
 {
     fileAssetController.deleteFileAsset(req.params.id).then(data => res.json(data));
 });
