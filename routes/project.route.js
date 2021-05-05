@@ -67,7 +67,7 @@ router.put('/project/update', (req, res) =>
     projectController.updateProject(req.body.task).then(data => res.json(data));
 });
 
-router.delete('/project/:id', (req, res) => 
+router.get('/project/delete/:id', (req, res) => 
 {
     projectController.deleteProject(req.params.id).then(data => res.json(data));
 });

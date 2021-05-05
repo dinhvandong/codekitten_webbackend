@@ -18,7 +18,7 @@ router.put('/library/update', (req, res) =>
     libraryController.updateLibrary(req.body.task).then(data => res.json(data));
 });
 
-router.delete('/library/:id', (req, res) => 
+router.delete('/library/delete/:id', (req, res) => 
 {
     libraryController.deleteLibrary(req.params.id).then(data => res.json(data));
 });

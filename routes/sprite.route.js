@@ -21,7 +21,7 @@ router.put("/sprite/update", (req, res) => {
   spriteController.updateSprite(req.body.task).then((data) => res.json(data));
 });
 
-router.delete("/sprite/:id", (req, res) => {
+router.get("/sprite/delete/:id", (req, res) => {
   spriteController.deleteSprite(req.params.id).then((data) => res.json(data));
 });
 var Promise = require('promise');
