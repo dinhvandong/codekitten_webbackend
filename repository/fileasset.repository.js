@@ -4,6 +4,7 @@ const { connect, disconnect } = require('../config/db.config');
 var md5 = require('md5');
 
 var ip = require("ip");
+const { ObjectId } = require('bson');
 const host = ip.address();
 //const baseUrl =  host + ":8080/api/files/find/";
 
@@ -64,9 +65,15 @@ class FileAssetRepository {
         return data.url;
     }
     async deleteFileAsset(fileId) {
+
+        console.log("ID",fileId);
         let data = {};
         try {
-            data = await FileAsset.deleteOne({_id : fileId});
+            console.log("IDK",fileId);
+
+            data = await FileAsset.deleteOne({_id : (fileId)});
+            console.log("IDZ",data);
+
         } catch(err) {
             logger.error('Error::' + err);
         }
