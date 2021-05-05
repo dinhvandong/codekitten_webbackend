@@ -66,7 +66,7 @@ class AssetRepository {
     async delete(assetId) {
         let data = {};
         try {
-            data = await Asset.deleteOne({assetId : assetId});
+            data = await Asset.deleteOne({_id : assetId});
         } catch(err) {
             logger.error('Error::' + err);
         }

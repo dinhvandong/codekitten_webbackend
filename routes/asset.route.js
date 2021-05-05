@@ -88,7 +88,7 @@ router.put("/asset/update", (req, res) => {
   assetController.updateAsset(req.body.task).then((data) => res.json(data));
 });
 
-router.delete("/asset/delete/:id", (req, res) => {
+router.get("/asset/delete/:id", (req, res) => {
   assetController.deleteAsset(req.params.id).then((data) => res.json(data));
 });
 
